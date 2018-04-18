@@ -8,23 +8,26 @@ import junit.framework.TestCase;
 
 public class IGameStateProviderTest extends TestCase {
 
+	IGameState ig;
 	public IGameStateProvider getinstance () {
 		IGameStateProvider ia = Mockito.mock(IGameStateProvider.class);
-		
-		Mockito.when(ia.save()).thenReturn(42);
-		Mockito.when(ia.get()).thenReturn(true);
+		IGameStateTest igt = new IGameStateTest();
+		ig = igt.getinstance();
+		//Mockito.when(ia.save()).thenReturn(42);
+		Mockito.when(ia.get("salut")).thenReturn(ig);
 		
 		
 		return ia;
 	}
 	
-	@Test
+	/*@Test
 	public void save(IGameState igs) {
 		
-	}
+	}*/
 	@Test
-	public IGameState testget(String s) {
-		return null;
+	public void testget(String s) {
+		IGameStateProvider tester = getinstance();
+		assertEquals(tester.get("salut"), this.ig);
 		
 	}
 
