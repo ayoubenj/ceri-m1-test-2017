@@ -3,6 +3,7 @@ package fr.univavignon.rodeo.test;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.junit.Test;
 import org.mockito.Mockito;
 
 import fr.univavignon.rodeo.api.*;
@@ -24,13 +25,14 @@ public class ISpecieTest extends TestCase {
 		
 		return is;
 	}
-	
+	@Test
 	public void getArea() {
 		ISpecie tester = getinstance();
 		assertEquals(tester.getArea(), 42);
 		
 	}
 	
+	@Test
 	public void getAnimals() {
 		ISpecie tester = getinstance();
 		assertEquals(tester.getAnimals().size(), 1);

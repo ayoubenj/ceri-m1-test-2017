@@ -11,15 +11,17 @@ import junit.framework.TestCase;
 
 public class IEnvironmentProviderTest extends TestCase {
 	
+	IEnvironment iee;
 	public IEnvironmentProvider getinstance () {
 		IEnvironmentProvider ia = Mockito.mock(IEnvironmentProvider.class);
 		 List<String> list = new ArrayList<String> (20);
 		 list.add("aaa");
 		 list.add("bbb");
 		 IEnvironmentTest ie = new IEnvironmentTest();
-		 IEnvironment iee = ie.getinstance();
+		 iee = ie.getinstance();
 		 
 		Mockito.when(ia.getAvailableEnvironments()).thenReturn(list);
+		
 		Mockito.when(ia.getEnvironment()).thenReturn(iee);
 		
 		
@@ -35,8 +37,8 @@ public class IEnvironmentProviderTest extends TestCase {
 	@Test
 	public void testgetEnvironment() {
 		IEnvironmentTest ie = new IEnvironmentTest();
-		 IEnvironment iee = ie.getinstance();
+		this.iee = ie.getinstance();
 		IEnvironmentProvider tester = getinstance();
-		assertEquals(tester.getEnvironment(),ie );
+		assertEquals(ie.getEnvironment(),this.iee );
 	}
 }
