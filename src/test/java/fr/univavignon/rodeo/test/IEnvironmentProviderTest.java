@@ -36,9 +36,9 @@ public class IEnvironmentProviderTest extends TestCase {
 	}
 	@Test
 	public void testgetEnvironment() {
-		IEnvironmentTest ie = new IEnvironmentTest();
-		this.iee = ie.getinstance();
+	
+		
 		IEnvironmentProvider tester = getinstance();
-		assertEquals(ie.getEnvironment(),this.iee );
+		assertEquals(tester.getEnvironment(),this.iee );
 	}
 }
