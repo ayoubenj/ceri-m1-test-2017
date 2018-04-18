@@ -2,7 +2,7 @@ package fr.univavignon.rodeo.test;
 
 import junit.framework.TestCase;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.mockito.Mockito;
 
 import fr.univavignon.rodeo.api.*;
