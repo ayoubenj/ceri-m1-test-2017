@@ -18,6 +18,7 @@ public class IAnimalTest extends TestCase {
 		Mockito.when(ia.getXP()).thenReturn(42);
 		Mockito.when(ia.isSecret()).thenReturn(true);
 		Mockito.when(ia.isBoss()).thenReturn(true);
+		
 		Mockito.when(ia.isEndangered()).thenReturn(true);
 		
 		return ia;
