@@ -1,12 +1,13 @@
 package fr.univavignon.rodeo.test;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Test;
 import org.mockito.Mockito;
 
 import fr.univavignon.rodeo.api.*;
-import junit.framework.TestCase;
 
-public class IGameStateProviderTest extends TestCase {
+public class IGameStateProviderTest {
 
 	IGameState ig;
 	public IGameStateProvider getinstance () {
@@ -25,7 +26,7 @@ public class IGameStateProviderTest extends TestCase {
 		
 	}*/
 	@Test
-	public void testget(String s) {
+	public void testget() {
 		IGameStateProvider tester = getinstance();
 		assertEquals(tester.get("salut"), this.ig);
 		
