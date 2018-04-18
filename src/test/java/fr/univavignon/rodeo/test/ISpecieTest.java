@@ -26,15 +26,15 @@ public class ISpecieTest extends TestCase {
 		return is;
 	}
 	@Test
-	public void getArea() {
+	public void testgetArea() {
 		ISpecie tester = getinstance();
 		assertEquals(tester.getArea(), 42);
 		
 	}
 	
 	@Test
-	public void getAnimals() {
+	public void testgetAnimals() {
 		ISpecie tester = getinstance();
-		assertEquals(tester.getAnimals().size(), 20);
+		assertEquals(tester.getAnimals().size(), 1);
 	}
 }
