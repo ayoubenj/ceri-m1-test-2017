@@ -18,7 +18,7 @@ public class IAnimalTest extends TestCase {
 		Mockito.when(ia.getXP()).thenReturn(42);
 		Mockito.when(ia.isSecret()).thenReturn(true);
 		Mockito.when(ia.isBoss()).thenReturn(true);
-		
+		Mockito.when(ia.isEndangered()).thenReturn(true);
 		
 		return ia;
 	}
@@ -30,17 +30,20 @@ public class IAnimalTest extends TestCase {
 		
 	}
 	
-	public boolean testisSecret() {
-		return false;
+	public void testisSecret() {
+		IAnimal tester = getinstance();
+		assertEquals(tester.isSecret(), true);
 		
 	}
-	public boolean testisEndangered() {
-		return false;
+	public void testisEndangered() {
+		IAnimal tester = getinstance();
+		assertEquals(tester.isEndangered(), true);
 		
 	}
 	
-	public boolean testisBoss() {
-		return false;
+	public void testisBoss() {
+		IAnimal tester = getinstance();
+		assertEquals(tester.isBoss(), true);
 		
 	}
 
