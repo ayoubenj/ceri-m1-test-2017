@@ -30,6 +30,7 @@ public class Environment implements IEnvironment {
 		return this.Areas;
 	}
 
+	
 	@Override
 	public List<ISpecie> getSpecies() {
 		return this.listspecie;
