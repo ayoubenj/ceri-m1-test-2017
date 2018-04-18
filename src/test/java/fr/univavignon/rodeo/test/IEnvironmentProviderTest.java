@@ -1,18 +1,42 @@
 package fr.univavignon.rodeo.test;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import org.junit.Test;
+import org.mockito.Mockito;
+
 import fr.univavignon.rodeo.api.*;
 import junit.framework.TestCase;
 
 public class IEnvironmentProviderTest extends TestCase {
-
-	public List<String> getAvailableEnvironments() {
-		return null;
+	
+	public IEnvironmentProvider getinstance () {
+		IEnvironmentProvider ia = Mockito.mock(IEnvironmentProvider.class);
+		 List<String> list = new ArrayList<String> (20);
+		 list.add("aaa");
+		 list.add("bbb");
+		 IEnvironmentTest ie = new IEnvironmentTest();
+		 IEnvironment iee = ie.getinstance();
+		 
+		Mockito.when(ia.getAvailableEnvironments()).thenReturn(list);
+		Mockito.when(ia.getEnvironment()).thenReturn(iee);
+		
+		
+		return ia;
+	}
+	@Test
+	public void testgetAvailableEnvironments() {
+		
+		IEnvironmentProvider tester = getinstance();
+		assertEquals(tester.getAvailableEnvironments().size(), 2);
 		
 	}
-	
-	public IEnvironment getEnvironment(String s) {
-		return null;
-		
+	@Test
+	public void testgetEnvironment() {
+		IEnvironmentTest ie = new IEnvironmentTest();
+		 IEnvironment iee = ie.getinstance();
+		IEnvironmentProvider tester = getinstance();
+		assertEquals(tester.getEnvironment(),ie );
 	}
 }
