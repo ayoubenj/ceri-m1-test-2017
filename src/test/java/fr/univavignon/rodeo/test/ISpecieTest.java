@@ -35,6 +35,6 @@ public class ISpecieTest extends TestCase {
 	@Test
 	public void getAnimals() {
 		ISpecie tester = getinstance();
-		assertEquals(tester.getAnimals().size(), 1);
+		assertEquals(tester.getAnimals().size(), 20);
 	}
 }
