@@ -18,7 +18,7 @@ public class EnvironmentProvider implements IEnvironmentProvider {
 
 
 	
-	IEnvironment ie =null;
+	IEnvironment ie ;
 	readfile rf = new readfile();
 
 	/**
@@ -27,8 +27,9 @@ public class EnvironmentProvider implements IEnvironmentProvider {
 	 * 
 	 * @return list qui est la liste noms des environnements.
 	 */
-	public EnvironmentProvider(String name) {
+	public EnvironmentProvider(String name, IEnvironment ie ) {
 		rf.envchoisit =name;
+		this.ie = ie;
 		
 	}
 	@Override

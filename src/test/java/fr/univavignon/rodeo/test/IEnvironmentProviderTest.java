@@ -14,9 +14,9 @@ public class IEnvironmentProviderTest extends TestCase {
 	
 	IEnvironment iee;
 	public IEnvironmentProvider getinstance () {
-		readfile rf = new readfile();
+		//readfile rf = new readfile();
 		IEnvironmentProvider ia = Mockito.mock(IEnvironmentProvider.class);
-		 List<String> list = new ArrayList<String> (20);
+		 List<String> list = new ArrayList<>();
 		 list.add("aaa");
 		 list.add("bbb");
 		 IEnvironmentTest ie = new IEnvironmentTest();
