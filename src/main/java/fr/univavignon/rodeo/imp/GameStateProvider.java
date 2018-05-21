@@ -18,7 +18,7 @@ public class GameStateProvider implements IGameStateProvider {
 
 	//dossier pour sauvegarde;//map contenant animal et ses caractéristiques;
 	 public static Map<String, List<String>> sauvegarde;// map <fichier,liste mots clés>
-	 readfile rf = new readfile();
+	 public static readfile rf = new readfile();
 	
 	@Override
 	public void save(IGameState gameState) {
@@ -41,7 +41,7 @@ public class GameStateProvider implements IGameStateProvider {
 	@Override
 	public IGameState get(String name) throws IllegalArgumentException {
 		System.out.println(" currdist on IGamestate : " + rf.currentdistance);
-		IGameState igs = new GameState(rf.currentdistance);
+		IGameState igs = new GameState(rf.currentdistance,name);
 		
 		File file = new File("./save.txt");  
 		   try {

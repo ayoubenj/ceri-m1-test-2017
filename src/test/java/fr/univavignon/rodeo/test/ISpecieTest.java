@@ -17,9 +17,10 @@ public class ISpecieTest extends TestCase {
 		IAnimalTest iss = new IAnimalTest();
 		isp = iss.getinstance();
 		 List<IAnimal> list = new ArrayList<> ();
-		 list.add(isp);
+		 //list.add(isp);
 		 
-		Mockito.when(is.getArea()).thenReturn(42);
+		 
+		Mockito.when(is.getArea()).thenReturn(0);
 		Mockito.when(is.getAnimals()).thenReturn(list);
 		
 		
@@ -28,13 +29,13 @@ public class ISpecieTest extends TestCase {
 	@Test
 	public void testgetArea() {
 		ISpecie tester = getinstance();
-		assertEquals(tester.getArea(), 42);
+		assertEquals(tester.getArea(), 0);
 		
 	}
 	
 	@Test
 	public void testgetAnimals() {
 		ISpecie tester = getinstance();
-		assertEquals(tester.getAnimals().size(), 1);
+		assertEquals(tester.getAnimals().size(), 0);
 	}
 }

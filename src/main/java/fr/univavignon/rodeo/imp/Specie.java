@@ -10,7 +10,7 @@ public class Specie implements ISpecie {
 
 	readfile rf = new readfile();
 	String Name ;
-	List<IAnimal> lia;
+	public static List<IAnimal> lia;
 	int area;
 	public Specie(String name2) {
 		this.Name = name2;
@@ -31,7 +31,7 @@ public class Specie implements ISpecie {
 	
 	@Override
 	public int getArea() {//in which area can be found current spece
-		System.out.println(rf.larea.size() + "/ " + this.getName() );
+		//System.out.println(rf.larea.size() + "/ " + this.getName() );
 		for(int i=0;i<rf.larea.size();i++) {
 			//System.out.println(rf.lspecies.get(i));
 			if(rf.lspecies.get(i).contains(this.getName()))
@@ -78,7 +78,7 @@ public class Specie implements ISpecie {
 
 	@Override
 	public String getName() {
-		System.out.println("here" + Name);
+		//System.out.println("here" + Name);
 		if(rf.currspecie.isEmpty())
 			return this.Name;
 		else

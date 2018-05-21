@@ -10,7 +10,7 @@ import org.junit.Test;
 import org.mockito.Mockito;
 
 import fr.univavignon.rodeo.api.*;
-
+import fr.univavignon.rodeo.imp.Environment;
 import junit.framework.TestCase;
 
 public class IEnvironmentTest extends TestCase {
@@ -19,11 +19,10 @@ public class IEnvironmentTest extends TestCase {
 	public IEnvironment getinstance () {
 		IEnvironment ia = Mockito.mock(IEnvironment.class);
 		ISpecieTest ist = new ISpecieTest();
-		o = ist.getinstance();
-		 List<ISpecie> list = new ArrayList<ISpecie> (20);
-		 list.add(o);
-		 
-		Mockito.when(ia.getAreas()).thenReturn(42);
+		Environment env = new Environment("Savannah");
+		 List<ISpecie> list = new ArrayList<>();
+		 list.addAll(env.getSpecies());		 
+		Mockito.when(ia.getAreas()).thenReturn(61);
 		Mockito.when(ia.getSpecies()).thenReturn(list);
 		
 		
@@ -32,13 +31,13 @@ public class IEnvironmentTest extends TestCase {
 	@Test
 	public void testgetAreas() {
 		IEnvironment tester = getinstance();
-		assertEquals(tester.getAreas(), 42);
+		assertEquals(tester.getAreas(), 61);
 		
 	}
 	@Test
 	public void testgetSpecies() {
 		IEnvironment tester = getinstance();
-		assertEquals(tester.getSpecies().size(), 1);
+		assertEquals(tester.getSpecies().size(), 61);
 		
 	}
 	

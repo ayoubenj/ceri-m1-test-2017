@@ -11,8 +11,8 @@ public class GameState implements IGameState {
 	int Progression;
 	readfile rf =new readfile();
 	
-	public GameState(int Progression) {
-		//this.Name = Name;
+	public GameState(int Progression, String name) {
+		this.Name = Name;
 		this.Progression = Progression;
 		
 	}

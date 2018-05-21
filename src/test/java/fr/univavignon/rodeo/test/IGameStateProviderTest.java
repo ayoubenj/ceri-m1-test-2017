@@ -15,7 +15,7 @@ public class IGameStateProviderTest {
 		IGameStateTest igt = new IGameStateTest();
 		ig = igt.getinstance();
 		//Mockito.when(ia.save()).thenReturn(42);
-		Mockito.when(ia.get("salut")).thenReturn(ig);
+		Mockito.when(ia.get("zebra")).thenReturn(ig);
 		
 		
 		return ia;
@@ -28,7 +28,7 @@ public class IGameStateProviderTest {
 	@Test
 	public void testget() {
 		IGameStateProvider tester = getinstance();
-		assertEquals(tester.get("salut"), this.ig);
+		assertEquals(tester.get("zebra"), this.ig);
 		
 	}
 

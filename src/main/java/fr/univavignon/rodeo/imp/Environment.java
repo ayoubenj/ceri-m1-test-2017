@@ -8,7 +8,7 @@ import fr.univavignon.rodeo.api.ISpecie;
 
 public class Environment implements IEnvironment {
 
-	String Name;
+	public static String Name;
 	int cmptarea ;
 	readfile rf = new readfile();
 	List<ISpecie> listspecie;
