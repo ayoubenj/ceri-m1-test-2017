@@ -25,6 +25,6 @@ public interface IEnvironmentProvider {
 	 * @return Required environment if available, <tt>null</tt> otherwise.
 	 * @throws IllegalArgumentException If the given <tt>name</tt> is null.
 	 */
-	IEnvironment getEnvironment() throws IllegalArgumentException;
+	IEnvironment getEnvironment(String name) throws IllegalArgumentException;
 
 }

@@ -22,7 +22,7 @@ public class IEnvironmentProviderTest extends TestCase {
 		 
 		Mockito.when(ia.getAvailableEnvironments()).thenReturn(list);
 		
-		Mockito.when(ia.getEnvironment()).thenReturn(iee);
+		Mockito.when(ia.getEnvironment("salut")).thenReturn(iee);
 		
 		
 		return ia;
@@ -39,6 +39,6 @@ public class IEnvironmentProviderTest extends TestCase {
 	
 		
 		IEnvironmentProvider tester = getinstance();
-		assertEquals(tester.getEnvironment(),this.iee );
+		assertEquals(tester.getEnvironment("salut"),this.iee );
 	}
 }

@@ -12,7 +12,7 @@ import fr.univavignon.rodeo.test.IAnimalTest;
 public class AnimalTest extends IAnimalTest  {
 
 	public IAnimal getinstance () {
-		Animal an = new Animal("moha", 42, true, true, true);
+		Animal an = new Animal("mohas", 42, true, true, true);
 			
 		return an;
 	}

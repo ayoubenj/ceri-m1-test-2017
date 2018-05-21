@@ -9,9 +9,10 @@ public class GameState implements IGameState {
 
 	String Name;
 	int Progression;
+	readfile rf =new readfile();
 	
-	public GameState(String Name, int Progression) {
-		this.Name = Name;
+	public GameState(int Progression) {
+		//this.Name = Name;
 		this.Progression = Progression;
 		
 	}
@@ -29,14 +30,26 @@ public class GameState implements IGameState {
 
 	@Override
 	public void catchAnimal(IAnimal animal) throws IllegalArgumentException, IllegalStateException {
-		// TODO Auto-generated method stub
+
+		rf.load().put(animal.getName(), rf.informer(rf));
+		System.out.println("liste "+rf.lanimalee);
 
 	}
 
 	@Override
 	public SpecieLevel getSpecieLevel(ISpecie specie) throws IllegalArgumentException {
 		// TODO Auto-generated method stub
+		if(getProgression()<25 && getProgression()>0)
+			return SpecieLevel.NOVICE;
+		if(getProgression()>=25 && getProgression()<150 )
+			return SpecieLevel.WRANGLER;
+		if(getProgression()>=150 && getProgression()<600 )
+			return SpecieLevel.NOVICE;
+		if(getProgression()>=600)
+			return SpecieLevel.MASTER;
 		return null;
+		
+		//return null;
 	}
 
 	@Override

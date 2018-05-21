@@ -9,14 +9,26 @@ import fr.univavignon.rodeo.api.ISpecie;
 public class Environment implements IEnvironment {
 
 	String Name;
-	int Areas;
+	int cmptarea ;
+	readfile rf = new readfile();
 	List<ISpecie> listspecie;
 	
-	public Environment (String Name, int Area) {
-		this.Name = Name;
-		this.Areas = Area;
-		listspecie = new ArrayList<ISpecie>(20);
-		//...
+	public Environment (String Name) {
+		cmptarea =0;
+		listspecie = new ArrayList<>();
+		this.Name = Name;//savannah...
+		for(int i = 0; i<rf.lenvname.size();i++) {
+			if(rf.lenvname.get(i).contains(this.Name)) {
+				cmptarea++;
+				//System.out.println(rf.lspecies.get(i));
+				ISpecie is = new Specie(rf.lspecies.get(i));
+				this.listspecie.add(is);
+			}
+			
+		}
+		
+		
+		
 		
 	}
 	
@@ -27,12 +39,14 @@ public class Environment implements IEnvironment {
 
 	@Override
 	public int getAreas() {
-		return this.Areas;
+		return this.cmptarea;
+		//return 0;
 	}
 
-	
+	//List of species available
 	@Override
 	public List<ISpecie> getSpecies() {
+		//ISpecie is = new Specie();
 		return this.listspecie;
 	}
 

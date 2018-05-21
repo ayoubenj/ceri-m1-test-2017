@@ -16,7 +16,7 @@ public class ISpecieTest extends TestCase {
 		ISpecie is = Mockito.mock(ISpecie.class);
 		IAnimalTest iss = new IAnimalTest();
 		isp = iss.getinstance();
-		 List<IAnimal> list = new ArrayList<IAnimal> (20);
+		 List<IAnimal> list = new ArrayList<> ();
 		 list.add(isp);
 		 
 		Mockito.when(is.getArea()).thenReturn(42);

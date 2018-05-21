@@ -23,5 +23,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
+	<classpathentry kind="lib" path="/home/ayoubenj/Bureau/jsoup-1.11.3.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

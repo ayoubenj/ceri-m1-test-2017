@@ -19,7 +19,7 @@ public class IGameStateTest extends TestCase {
 		//Mockito.when(ia.exploreAreas()).thenReturn(42);
 		//Mockito.when(ia.catchAnimal()).thenReturn(true);
 		Mockito.when(ia.getSpecieLevel(isp)).thenReturn(SpecieLevel.NOVICE);
-		Mockito.when(ia.getProgression()).thenReturn(42);
+		Mockito.when(ia.getProgression()).thenReturn(24);
 		
 		return ia;
 	}
@@ -43,7 +43,7 @@ public class IGameStateTest extends TestCase {
 	@Test
 	public void testgetProgression() {
 		IGameState tester = getinstance();
-		assertEquals(tester.getProgression(), 42);
+		assertEquals(tester.getProgression(), 24);
 		
 	}
 	

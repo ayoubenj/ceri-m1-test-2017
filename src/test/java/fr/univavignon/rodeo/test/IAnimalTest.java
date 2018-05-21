@@ -16,6 +16,7 @@ public class IAnimalTest extends TestCase {
 	public IAnimal getinstance () {
 		IAnimal ia = Mockito.mock(IAnimal.class);
 		
+		Mockito.when(ia.getName()).thenReturn("mohas");
 		Mockito.when(ia.getXP()).thenReturn(42);
 		Mockito.when(ia.isSecret()).thenReturn(true);
 		Mockito.when(ia.isBoss()).thenReturn(true);
@@ -24,6 +25,14 @@ public class IAnimalTest extends TestCase {
 		return ia;
 	}
 	
+
+	@Test
+	public void testgetName() {
+		IAnimal tester = getinstance();
+		assertEquals(tester.getName(), "mohas");
+
+		
+	}
 	@Test
 	public void testgetXP() {
 		IAnimal tester = getinstance();
