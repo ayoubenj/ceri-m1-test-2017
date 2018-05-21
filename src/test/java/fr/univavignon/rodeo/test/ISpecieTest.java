@@ -7,20 +7,25 @@ import org.junit.Test;
 import org.mockito.Mockito;
 
 import fr.univavignon.rodeo.api.*;
+import fr.univavignon.rodeo.imp.readfile;
 import junit.framework.TestCase;
 
 public class ISpecieTest extends TestCase {
 
 	IAnimal isp;
+	
 	public ISpecie getinstance () {
 		ISpecie is = Mockito.mock(ISpecie.class);
 		IAnimalTest iss = new IAnimalTest();
 		isp = iss.getinstance();
 		 List<IAnimal> list = new ArrayList<> ();
-		 //list.add(isp);
+		 
+		 for(int i=0; i<8 ; i++)
+			 list.add(isp);
 		 
 		 
-		Mockito.when(is.getArea()).thenReturn(0);
+		 
+		Mockito.when(is.getArea()).thenReturn(1);
 		Mockito.when(is.getAnimals()).thenReturn(list);
 		
 		
@@ -29,13 +34,13 @@ public class ISpecieTest extends TestCase {
 	@Test
 	public void testgetArea() {
 		ISpecie tester = getinstance();
-		assertEquals(tester.getArea(), 0);
+		assertEquals(tester.getArea(), 1);
 		
 	}
 	
 	@Test
 	public void testgetAnimals() {
 		ISpecie tester = getinstance();
-		assertEquals(tester.getAnimals().size(), 0);
+		assertEquals(tester.getAnimals().size(), 8);
 	}
 }

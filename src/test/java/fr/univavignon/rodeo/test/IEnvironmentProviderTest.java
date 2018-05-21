@@ -7,12 +7,14 @@ import org.junit.Test;
 import org.mockito.Mockito;
 
 import fr.univavignon.rodeo.api.*;
+import fr.univavignon.rodeo.imp.readfile;
 import junit.framework.TestCase;
 
 public class IEnvironmentProviderTest extends TestCase {
 	
 	IEnvironment iee;
 	public IEnvironmentProvider getinstance () {
+		readfile rf = new readfile();
 		IEnvironmentProvider ia = Mockito.mock(IEnvironmentProvider.class);
 		 List<String> list = new ArrayList<String> (20);
 		 list.add("aaa");
@@ -22,7 +24,7 @@ public class IEnvironmentProviderTest extends TestCase {
 		 
 		Mockito.when(ia.getAvailableEnvironments()).thenReturn(list);
 		
-		Mockito.when(ia.getEnvironment("salut")).thenReturn(iee);
+		Mockito.when(ia.getEnvironment("Savannah")).thenReturn(iee);
 		
 		
 		return ia;
@@ -39,6 +41,6 @@ public class IEnvironmentProviderTest extends TestCase {
 	
 		
 		IEnvironmentProvider tester = getinstance();
-		assertEquals(tester.getEnvironment("salut"),this.iee );
+		assertEquals(tester.getEnvironment("Savannah"),this.iee );
 	}
 }

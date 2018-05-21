@@ -8,26 +8,44 @@ import java.util.stream.Collectors;
 import fr.univavignon.rodeo.api.IEnvironment;
 import fr.univavignon.rodeo.api.IEnvironmentProvider;
 
+/**
+ * @author ENJOUMI AYOUB & BENHACHANI MOHAMMED 
+ * 
+ * Animal classe comme point d'entrée, obtention des environnements  
+ */
+
 public class EnvironmentProvider implements IEnvironmentProvider {
 
-	//List<String> listprovider;
+
+	
 	IEnvironment ie =null;
-	//IEnvironment ie ;
 	readfile rf = new readfile();
-	public EnvironmentProvider() {
-		
-		//listprovider =new ArrayList<String>(20);
+
+	/**
+	 * Method permettant de récuppérer, remplir
+	 * une liste des noms distinct des environnements et la retourner.
+	 * 
+	 * @return list qui est la liste noms des environnements.
+	 */
+	public EnvironmentProvider(String name) {
+		rf.envchoisit =name;
 		
 	}
 	@Override
 	public List<String> getAvailableEnvironments() {
-		Collection<String> list = rf.lenvname;
-		 
-		// Get collection without duplicate i.e. distinct only
+		Collection<String> list = rf.lenvname; 
 		List<String> distinctElements = list.stream().distinct().collect(Collectors.toList());
-		// TODO Auto-generated method stub
 		return distinctElements;
 	}
+	
+	/**
+	 *  Method permettant de récuppérer un environnement
+	 * si le nom entrée en paramétre est dans la liste des environnements disponible.
+	 * 
+	 * @param name le nom de l'environnement recherché
+	 * @return environnement si disponible , null sinon
+	 * @throws IllegalArgumentException If the given <tt>name</tt> is null.
+	 */
 
 	@Override
 	public IEnvironment getEnvironment(String name) throws IllegalArgumentException {
@@ -36,10 +54,8 @@ public class EnvironmentProvider implements IEnvironmentProvider {
 				ie =new Environment(name);
 				return ie;
 		}
-		return ie;
 		
-		// TODO Auto-generated method stub
-		//return null;
+		return ie;
 	}
 
 }

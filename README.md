@@ -28,5 +28,5 @@
 ###### ce qui est fait : TP1, TP2,TP3,
 ###### tester avec un main dans la classe readfile qui permet de récuppérer les informations des pockémon depuis internet. 
 
-###### Ce qui manque : TP4 : FINALISATION implimentation et tester chaque implimentation
+###### Ce qui manque/marche pas : TP4 : test ->  gamestateproviderTest et environmentProviderTest;
 

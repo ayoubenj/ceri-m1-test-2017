@@ -6,9 +6,16 @@ import java.util.List;
 import fr.univavignon.rodeo.api.IAnimal;
 import fr.univavignon.rodeo.api.ISpecie;
 
+
+/**
+ * @author ENJOUMI AYOUB & BENHACHANI MOHAMMED 
+ * 
+ * Specie classe permettant la définition des espéces.
+ */
+
 public class Specie implements ISpecie {
 
-	readfile rf = new readfile();
+	readfile rf = new readfile(); //
 	String Name ;
 	public static List<IAnimal> lia;
 	int area;
@@ -29,21 +36,31 @@ public class Specie implements ISpecie {
 		
 	}
 	
+	
+	/**
+	 * Getter pour récupérer le numéro de la zone ciblé dans
+	 * laquelle l'espéce peux être trouvée.
+	 * 
+	 * @return La zone dans laquelle l'espéce en question peux être trouvée.
+	 */
 	@Override
 	public int getArea() {//in which area can be found current spece
-		//System.out.println(rf.larea.size() + "/ " + this.getName() );
 		for(int i=0;i<rf.larea.size();i++) {
-			//System.out.println(rf.lspecies.get(i));
 			if(rf.lspecies.get(i).contains(this.getName()))
 				return rf.larea.get(i);
 			
 		}
 				
-		
-		// TODO Auto-generated method stub
-		return 0; //The area in which this specie can be found from.
+		return 0;
 	}
 
+	/**
+	 * Method getAnimals permettant de récupérer la liste 
+	 * d'animaux.
+	 * 
+	 * @return Liste des animaux disponibles pour un espéce donné.
+	 */
+	
 	//List of available animal for this specie. //liste animaux slon espéce
 	@Override
 	public List<IAnimal> getAnimals() {
@@ -53,7 +70,6 @@ public class Specie implements ISpecie {
 		for(int i=0; i<rf.lanimal.size();i++) {
 			
 			if(rf.lspecies.get(i).contains(this.getName())) {
-				//if(rf.anims.contains(rf.lanimal.get(i))){
 				//on définit si il est seret, boss...
 				boolean s =false,e = false,b=false;
 				if(rf.lclass.get(i).contains("Secret"))
@@ -66,25 +82,23 @@ public class Specie implements ISpecie {
 				IAnimal ia = new Animal(rf.lanimal.get(i),rf.larea.get(i),s,e,b);
 				//ajouter à la liste
 				lia.add(ia);
-			//	}
 			}
 			
 		}
 		
-		
-		// TODO Auto-generated method stub
 		return lia;
 	}
 
+	/**
+	 * Getteur du nom de l'espéce en question
+	 */
 	@Override
 	public String getName() {
-		//System.out.println("here" + Name);
 		if(rf.currspecie.isEmpty())
 			return this.Name;
 		else
 			return rf.currspecie;
-		// TODO Auto-generated method stub
-		//return null;
+
 	}
 
 }

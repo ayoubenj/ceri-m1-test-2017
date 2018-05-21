@@ -6,6 +6,7 @@ import org.junit.Test;
 import org.mockito.Mockito;
 
 import fr.univavignon.rodeo.api.*;
+import fr.univavignon.rodeo.imp.GameStateProvider;
 
 public class IGameStateProviderTest {
 
@@ -13,9 +14,10 @@ public class IGameStateProviderTest {
 	public IGameStateProvider getinstance () {
 		IGameStateProvider ia = Mockito.mock(IGameStateProvider.class);
 		IGameStateTest igt = new IGameStateTest();
+		 		
 		ig = igt.getinstance();
 		//Mockito.when(ia.save()).thenReturn(42);
-		Mockito.when(ia.get("zebra")).thenReturn(ig);
+		Mockito.when(ia.get("Cape Buffalo")).thenReturn(ig);
 		
 		
 		return ia;
@@ -28,7 +30,8 @@ public class IGameStateProviderTest {
 	@Test
 	public void testget() {
 		IGameStateProvider tester = getinstance();
-		assertEquals(tester.get("zebra"), this.ig);
+		System.out.println(this.ig);
+		assertEquals(tester.get("Cape Buffalo"), this.ig);
 		
 	}
 
